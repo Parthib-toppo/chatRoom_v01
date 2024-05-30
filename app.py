@@ -83,8 +83,8 @@ def disconnect():
     leave_room(room)
 
     if room in rooms:
-        rooms[room][members]-=1
-        if rooms[room][members] == 0:
+        rooms[room]["members"]-=1
+        if rooms[room]["members"] == 0:
             del rooms[room]
     send({"name" : name , "message" : 'has left the room.'}, to=room)
     print(name + ' left room ' + room)
